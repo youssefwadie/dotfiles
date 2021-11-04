@@ -1,0 +1,71 @@
+[[ $- != *i* ]] && return
+# History
+HISTSIZE=500
+SAVEHIST=100000
+HISTFILE="$ZDOTDIR/.histfile"
+setopt APPEND_HISTORY
+
+# Basic auto/tab completion
+autoload -Uz compinit
+# menu
+zstyle ':completion:*' menu select
+# Case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+# Colors
+# Complete . and .. special directories
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zmodload zsh/complist
+
+# conda completion
+fpath+="$ZDOTDIR/conda-zsh-completion"
+
+compinit
+_comp_options+=(globdots)		# Include hidden files
+
+# get help
+autoload -Uz run-help
+# unalias run-help
+alias help='run-help'
+
+# options
+setopt autocd extendedglob 		# change directory given just path
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Key-bindings
+bindkey -s '^o' 'ranger^M'
+
+# extra files
+[[ -f "$ZDOTDIR/.zsh_aliases"   ]] && source "$ZDOTDIR/.zsh_aliases"
+[[ -f "$ZDOTDIR/.zsh_functions" ]] && source "$ZDOTDIR/.zsh_functions"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 	# Fish-like syntax highlighting
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 		# Fish-like autosuggestions
+# search repos for programs that can't be found
+source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
+
+# Ranger plugins
+[[ -f "$HOME/.config/ranger/plugins/shell_automatic_cd.sh" ]] && source "$HOME/.config/ranger/plugins/shell_automatic_cd.sh"
+# ~/.local/bin/ANSI/$(ls ~/.local/bin/ANSI/ | shuf -n 1)
+
+PROMPT="[%n@%m %c]$ "
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
