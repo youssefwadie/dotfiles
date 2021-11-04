@@ -1,0 +1,14 @@
+#!/bin/sh
+
+chosen=$(printf '[Canceled]\nShutdown\nReboot\nSleep' | rofi -dmenu -l 6 -i -p "Choose Action")
+
+case "$chosen" in
+    "Shutdown")
+        poweroff;;
+    "Reboot")
+        reboot;;
+    "Sleep")
+        systemctl suspend;;
+    *) exit 1 ;;
+esac
+
