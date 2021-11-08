@@ -22,6 +22,7 @@ alias big='expac -H M "%m\t%n" | sort -h | nl'
 #know what you do in these files
 alias ngrub='doas nvim /etc/default/grub'
 alias nmkinitcpio='doas nvim /etc/mkinitcpio.conf'
+alias v='nvim'
 
 # grub update
 alias update-grub='doas grub-mkconfig -o /boot/grub/grub.cfg'
