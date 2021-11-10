@@ -4,7 +4,6 @@ source /usr/share/nvim/archlinux.vim
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " prettier command for coc
@@ -16,22 +15,21 @@ let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
 	\ 'coc-jedi',
-	\ 'coc-json',
-	\ 'coc-go'
+	\ 'coc-json'
 	\ ]
 
 " go-vim config
 
 " syntax highlighting
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-
+" let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_function_calls = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_extra_types = 1
+" let g:go_highlight_build_constraints = 1
+" let g:go_highlight_generate_tags = 1
+" 
 " coc config
 " from readme
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
