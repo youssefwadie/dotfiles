@@ -9,6 +9,7 @@ alias tohybrid='optimus-manager --switch hybrid'
 
 #fix obvious typo's
 alias cd..='cd ..'
+alias daos='doas'
 # systemd stuff
 # alias start-virt='doas systemctl start libvirtd.service && doas virsh net-start default && virt-manager'
 
