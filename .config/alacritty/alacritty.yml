@@ -28,6 +28,9 @@ colors:
     cyan:    '#66D9EF'
     white:   '#F8F8F2'
 
+scrolling:
+  history: 5000
+
 # Font
 font:
   normal:
