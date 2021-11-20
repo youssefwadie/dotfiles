@@ -103,6 +103,24 @@ then
     }
 fi
 
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/usr/bin/micromamba";
+export MAMBA_ROOT_PREFIX="$HOME/.micromamba";
+__mamba_setup="$('/usr/bin/micromamba' shell hook --shell zsh --prefix "$HOME/.micromamba" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "$HOME/.micromamba/etc/profile.d/mamba.sh" ]; then
+        . "$HOME/.micromamba/etc/profile.d/mamba.sh"
+    else
+        export PATH="/home/youssef/.micromamba/bin:$PATH"
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
 # >>> umamba completion >>>
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -114,4 +132,5 @@ _umamba_completions()
 
 complete -o default -F _umamba_completions micromamba
 # <<< umamba completion <<<
+
 
