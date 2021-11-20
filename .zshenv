@@ -8,4 +8,4 @@ export PATH
 # set editor to nvim
 export EDITOR='nvim'
 export VISUAL='nvim'
-
+export MAMBA_ROOT_PREFIX=~/.micromamba
