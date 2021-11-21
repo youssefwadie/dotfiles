@@ -115,7 +115,7 @@ else
     if [ -f "$HOME/.micromamba/etc/profile.d/mamba.sh" ]; then
         . "$HOME/.micromamba/etc/profile.d/mamba.sh"
     else
-        export PATH="/home/youssef/.micromamba/bin:$PATH"
+        export PATH="$HOME/.micromamba/bin:$PATH"
     fi
 fi
 unset __mamba_setup

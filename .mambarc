@@ -1,0 +1,6 @@
+auto_activate_base: false
+channels:
+  - conda-forge
+
+always_yes: false
+channel_priority: strict
