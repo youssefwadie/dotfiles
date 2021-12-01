@@ -1,0 +1,2 @@
+--downloader aria2c
+-o ~/Downloads/YouTube/%(title)s.%(ext)s
