@@ -3,10 +3,8 @@
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "?",
-  "diagnostic.checkCurrentLine": true,
-  "coc.preferences.hoverTarget": "float",
+  "diagnostic.checkCurrentLine": true, 
   "coc.preferences.formatOnSaveFiletypes": [
-    "python",
-    "go"
+    "python"
   ]
 }

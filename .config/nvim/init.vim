@@ -10,7 +10,6 @@ call plug#end()
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " coc config
-" 'coc-go'
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
@@ -18,18 +17,6 @@ let g:coc_global_extensions = [
 	\ 'coc-json'
 	\ ]
 
-" go-vim config
-
-" syntax highlighting
-" let g:go_highlight_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_generate_tags = 1
-" 
 " coc config
 " from readme
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -198,11 +185,18 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" My keybindings
+" Make double-<Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
 " Integrating with powerline fonts
 let g:airline_powerline_fonts = 1
+:filetype plugin on
+:syntax on
 :set number
 :set relativenumber
 :set ignorecase
 :set smartcase
 :set mouse=a
 :set title
+
