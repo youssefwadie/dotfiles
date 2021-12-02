@@ -12,20 +12,20 @@
 #}
 
 function yt480() {
-	yt-dlp "$1" -f135+140 -o "~/Downloads/youtube-dl/%(title)s.%(ext)s" --write-sub --sub-lang en,ar
+	yt-dlp "$1" -f135+140 -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar
 }
 
 
 function yt_video() {
-	yt-dlp -f "$1" -o "~/Downloads/youtube-dl/%(title)s.%(ext)s" --write-sub --sub-lang en,ar --write-auto-sub "$2"
+	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar --write-auto-sub "$2"
 }
 
 function yt_playlist() {
-	yt-dlp -f "$1" -o "~/Downloads/youtube-dl/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
+	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
 }
 
 function yt_audio() {
-	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/youtube-dl/Music/%(title)s.%(ext)s" "$2"
+	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(title)s.%(ext)s" "$2"
 }
 
 
