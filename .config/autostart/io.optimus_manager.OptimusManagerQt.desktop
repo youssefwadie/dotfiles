@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=System;Settings;Qt;
+Comment=A program to handle GPU switching on Optimus laptops
+Exec=optimus-manager-qt
+Icon=optimus-manager-qt
+Keywords=nvidia;optimus;settings;switch;GPU;
+Name=Optimus Manager
+StartupNotify=false
+Terminal=false
+Type=Application
