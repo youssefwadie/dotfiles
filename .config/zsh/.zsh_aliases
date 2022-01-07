@@ -37,6 +37,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
 # pacman stuff
+alias p='pacman'
 alias i='doas pacman -Syu'
 alias r='doas pacman -Rsn'
 alias u='doas pacman -Syu && paru -Sua'
