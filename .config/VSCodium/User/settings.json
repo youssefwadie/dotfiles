@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "python.pythonPath": "/home/youssef/.conda/envs/ws/bin/python",
+    "terminal.integrated.fontFamily": "'MesloLGS NF'",
+    "omnisharp.useGlobalMono": "always",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
+}
