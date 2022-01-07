@@ -79,13 +79,13 @@ BackgroundAlternate=163,212,250
 BackgroundNormal=61,174,233
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
-ForegroundActive=255,255,255
+ForegroundActive=61,174,233
 ForegroundInactive=112,125,138
-ForegroundLink=253,188,75
-ForegroundNegative=176,55,69
-ForegroundNeutral=198,92,0
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
 ForegroundNormal=255,255,255
-ForegroundPositive=23,104,57
+ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
@@ -133,7 +133,6 @@ ForegroundVisited=155,89,182
 [General]
 ColorScheme=BreezeLight
 Name=Breeze Light
-Name[ar]=نسيم فاتح
 Name[az]=Breeze - İşıqlı
 Name[ca]=Brisa clara
 Name[ca@valencia]=Brisa clara
@@ -170,7 +169,7 @@ Name[sv]=Breeze Light
 Name[tg]=Насими сабук
 Name[uk]=Світла Breeze
 Name[x-test]=xxBreeze Lightxx
-Name[zh_CN]=Breeze 微风浅色
+Name[zh_CN]=Breeze 微风亮色
 Name[zh_TW]=Breeze Light
 shadeSortColumn=true
 
