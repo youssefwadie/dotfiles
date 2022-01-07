@@ -9,6 +9,9 @@ export PATH
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+# Disable .NET telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # conda stuff
 export CONDA_ENVS_PATH="$HOME/.conda/envs:/opt/miniconda3/envs"
 
