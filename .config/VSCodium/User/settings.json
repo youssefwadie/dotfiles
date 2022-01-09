@@ -1,8 +1,9 @@
 {
     "workbench.colorTheme": "One Dark Pro Flat",
-    "python.pythonPath": "/home/youssef/.conda/envs/ws/bin/python",
-    "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.fontFamily": "'MesloLGS NF'",
+    "terminal.integrated.inheritEnv": false,
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "editor.mouseWheelZoom": true
+    "python.pythonPath": "/home/youssef/.conda/envs/ws/bin/python"
 }
