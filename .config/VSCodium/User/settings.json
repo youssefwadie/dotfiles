@@ -3,5 +3,6 @@
     "python.pythonPath": "/home/youssef/.conda/envs/ws/bin/python",
     "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "editor.mouseWheelZoom": true
 }
