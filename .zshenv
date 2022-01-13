@@ -1,4 +1,5 @@
-ZDOTDIR="$HOME/.config/zsh"
+# ZSH
+export ZDOTDIR="$HOME/.config/zsh"
 
 # append to path
 typeset -U PATH path
