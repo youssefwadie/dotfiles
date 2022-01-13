@@ -9,8 +9,6 @@ alias tohybrid='optimus-manager --switch hybrid'
 #fix obvious typo's
 alias cd..='cd ..'
 alias daos='doas'
-# systemd stuff
-# alias start-virt='doas systemctl start libvirtd.service && doas virsh net-start default && virt-manager'
 
 # get the error messages from journalctl
 alias jctl='journalctl -p 3 -xb'
@@ -82,12 +80,9 @@ alias yta-opus='yt_audio opus'
 alias yta-vorbis='yt_audio vorbis'
 alias yta-wav='yt_audio wav'
 
-# Download manager (aria2)
-alias cdl='aria2c -c -x2 -j1 -i links.txt'
-
-alias free='free --mega -h'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 # clean history
 # alias 'clear_history'="echo -n >| $HISTFILE; fc -p $HISTFILE; echo >&2 History file deleted."
+
