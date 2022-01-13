@@ -25,7 +25,7 @@ function yt_playlist() {
 }
 
 function yt_audio() {
-	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(title)s.%(ext)s" "$2"
+	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(creator)s/%(title)s.%(ext)s" "$2"
 }
 
 
