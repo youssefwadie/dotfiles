@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # append to path
 typeset -U PATH path
-path=("$HOME/.local/bin" "$path[@]")
+path=("$HOME/.local/bin" "$HOME/.local/node/bin" "$path[@]")
 export PATH
 
 # set editor to nvim
@@ -24,3 +24,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+
+# Node
+export npm_config_prefix="$HOME/.local/node"
