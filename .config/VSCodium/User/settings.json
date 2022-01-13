@@ -2,6 +2,8 @@
     "workbench.colorTheme": "One Dark Pro Flat",
     "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.mouseWheelZoom": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.autoSave": "onFocusChange",
     "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "terminal.integrated.inheritEnv": false,
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
