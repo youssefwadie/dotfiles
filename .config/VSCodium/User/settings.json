@@ -5,6 +5,5 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "files.autoSave": "onFocusChange",
     "terminal.integrated.fontFamily": "'MesloLGS NF'",
-    "terminal.integrated.inheritEnv": false,
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 }
