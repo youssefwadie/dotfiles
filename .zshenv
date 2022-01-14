@@ -28,9 +28,3 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Node
 export npm_config_prefix="$HOME/.local/node"
 
-# FZF
-# Use ~~ as the trigger sequence instead of the default **
-# export FZF_COMPLETION_TRIGGER='~~'
-# Options to fzf command
-export FZF_COMPLETION_OPTS='--border --info=inline'
-
