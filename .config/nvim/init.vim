@@ -4,7 +4,7 @@ source /usr/share/nvim/archlinux.vim
 " Specify a directory for plugins
 call plug#begin('~/.nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " prettier command for coc
