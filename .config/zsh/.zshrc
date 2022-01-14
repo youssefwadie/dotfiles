@@ -3,7 +3,7 @@
 # History
 HISTSIZE=500
 SAVEHIST=100000
-HISTFILE="$ZDOTDIR/.histfile"
+HISTFILE="$HOME/.cache/zsh/history"
 setopt APPEND_HISTORY
 
 # Basic auto/tab completion
