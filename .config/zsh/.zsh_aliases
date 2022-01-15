@@ -86,3 +86,5 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 # clean history
 # alias 'clear_history'="echo -n >| $HISTFILE; fc -p $HISTFILE; echo >&2 History file deleted."
 
+# JS stuff
+alias live-server='live-server --browser=/usr/bin/chromium'
