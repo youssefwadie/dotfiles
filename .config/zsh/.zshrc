@@ -89,7 +89,7 @@ else
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme 			# Powerlevel10k theme
 fi
 
-if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
+if [[ "${TERM}" != "" && "${TERM}" == "xterm-256color" ]]
 then
     precmd()
     {
