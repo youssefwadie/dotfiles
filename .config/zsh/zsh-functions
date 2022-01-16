@@ -31,7 +31,6 @@ function yt_audio() {
 function continue_downloading() {
     if [[ $# -ne 1 ]]; then
         printf "Expected the one file for links, got %d\n" $#
-        exit 1
     else
         aria2c --max-concurrent-downloads=1 --summary-interval=0 --dir=$PWD --input=$1
     fi
