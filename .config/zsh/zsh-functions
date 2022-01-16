@@ -28,6 +28,14 @@ function yt_audio() {
 	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(creator)s/%(title)s.%(ext)s" "$2"
 }
 
+function continue_downloading() {
+    if [[ $# -ne 1 ]]; then
+        printf "Expected the one file for links, got %d\n" $#
+        exit 1
+    else
+        aria2c --max-concurrent-downloads=1 --summary-interval=0 --dir=$PWD --input=$1
+    fi
+}
 
 function ex()
 {
