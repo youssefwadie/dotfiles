@@ -63,8 +63,8 @@ bindkey -s '^o' 'ranger_cd^M'
 
 
 # extra files
-[[ -f "$ZDOTDIR/zsh-aliases"   ]] && source "$ZDOTDIR/zsh-aliases"
-[[ -f "$ZDOTDIR/zsh-functions" ]] && source "$ZDOTDIR/zsh-functions"
+[[ -f "$ZDOTDIR/aliases.zsh"   ]] && source "$ZDOTDIR/aliases.zsh"
+[[ -f "$ZDOTDIR/functions.zsh" ]] && source "$ZDOTDIR/functions.zsh"
 
 
 # Shell themes and plugins
