@@ -32,7 +32,7 @@ function continue_downloading() {
     if [[ $# -ne 1 ]]; then
         printf "Expected the one file for links, got %d\n" $#
     else
-        aria2c --max-concurrent-downloads=1 --summary-interval=0 --dir=$PWD --input=$1
+        aria2c --max-concurrent-downloads=1 --summary-interval=0 --check-certificate=false --auto-file-renaming=false --dir=$PWD --input=$1
     fi
 }
 
