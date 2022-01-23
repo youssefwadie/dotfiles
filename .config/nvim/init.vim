@@ -5,6 +5,7 @@ source /usr/share/nvim/archlinux.vim
 call plug#begin('~/.nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " prettier command for coc
@@ -192,7 +193,7 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 " Integrating with powerline fonts
 let g:airline_powerline_fonts = 1
-:filetype plugin on
+filetype plugin on
 :syntax on
 :set number
 :set relativenumber
