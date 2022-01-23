@@ -141,7 +141,7 @@ toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 widgetStyle=Breeze
 
 [Icons]
-Theme=Papirus-Dark
+Theme=breeze-dark
 
 [KDE]
 ShowIconsInMenuItems=true
