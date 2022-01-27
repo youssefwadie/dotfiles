@@ -46,8 +46,8 @@ alias cleanup='pacman -Qtdq | doas pacman -Rsn -'
 alias mirrors='doas reflector --latest 10 --protocol http,https --sort rate --download-timeout 10 --save /etc/pacman.d/mirrorlist'
 
 # list
-alias l='ls -lah --color=auto'
-alias ls='ls --color=auto'
+alias l='ls --color=auto'
+alias ls='ls -lh --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 alias l.="ls -A | egrep '^\.'"
