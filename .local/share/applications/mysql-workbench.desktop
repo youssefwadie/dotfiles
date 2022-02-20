@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=GTK;Database;Development;
+Comment[en_US]=MySQL Database Design, Administration and Development Tool
+Comment=MySQL Database Design, Administration and Development Tool
+Exec=Exec=env GTK_THEME=Adwaita:light mysql-workbench %f
+GenericName[en_US]=
+GenericName=
+Icon=mysql-workbench
+MimeType=application/vnd.mysql-workbench-model;application/sql;
+Name[en_US]=MySQL Workbench
+Name=MySQL Workbench
+Path=
+StartupNotify=true
+StartupWMClass=mysql-workbench-bin
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
