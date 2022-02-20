@@ -2,7 +2,7 @@
 Categories=GTK;Database;Development;
 Comment[en_US]=MySQL Database Design, Administration and Development Tool
 Comment=MySQL Database Design, Administration and Development Tool
-Exec=Exec=env GTK_THEME=Adwaita:light mysql-workbench %f
+Exec=env GTK_THEME=Adwaita:light mysql-workbench %f
 GenericName[en_US]=
 GenericName=
 Icon=mysql-workbench
