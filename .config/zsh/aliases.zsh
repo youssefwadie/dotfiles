@@ -88,3 +88,7 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 # JS stuff
 alias live-server='live-server --browser=/usr/bin/chromium'
+
+# Java
+alias payara-run='java -jar /home/youssef/.local/java-bin/payara-micro-5.2021.10.jar --port 8080 --deploy'
+
