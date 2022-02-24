@@ -38,7 +38,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 alias p='pacman'
 alias i='doas pacman -Syu'
 alias r='doas pacman -Rsn'
-alias u='doas pacman -Syu && paru -Sua && flatpak update'
+alias u='doas pacman -Syu && paru -Sua'
 alias idep='doas pacman -Syu && doas pacman -S --asdeps'
 alias q='paru -Ss'
 alias unlock="doas rm /var/lib/pacman/db.lck"

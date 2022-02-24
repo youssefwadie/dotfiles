@@ -17,7 +17,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export CONDA_ENVS_PATH="$HOME/.conda/envs:/opt/miniconda3/envs"
 
 # Java
-export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
+export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
