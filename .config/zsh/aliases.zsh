@@ -90,5 +90,6 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias live-server='live-server --browser=/usr/bin/chromium'
 
 # Java
-alias payara-run='java -jar /home/youssef/.local/java-bin/payara-micro-5.2021.10.jar --port 8080 --deploy'
-
+alias payara-run='java -jar /home/youssef/.local/java-bin/payara-micro-5.2022.1.jar --port 8080 --deploy'
+alias antlr4-compile='javac -cp /usr/share/java/antlr-complete.jar *.java'
+alias antlr4-grun='java -cp /usr/share/java/antlr-complete.jar:./ org.antlr.v4.gui.TestRig'
