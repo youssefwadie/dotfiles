@@ -25,6 +25,11 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# micromamba stuff
+export MAMBA_EXE="/usr/bin/micromamba"
+export MAMBA_ROOT_PREFIX="$HOME/.micromamba"
+
 # Node
 export npm_config_prefix="$HOME/.local/node"
+
 
