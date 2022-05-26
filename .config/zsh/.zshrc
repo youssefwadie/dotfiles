@@ -53,6 +53,9 @@ zsh_add_file "$XDG_CONFIG_HOME/ranger/plugins/shell_automatic_cd.sh"
 # conda completion
 # fpath+="$ZDOTDIR/conda-zsh-completion"
 
+# extra shell completions
+fpath=(/usr/share/zsh/site-functions/ $fpath)
+
 # aliases and some fundtions
 zsh_add_file "$ZDOTDIR/aliases.zsh"
 zsh_add_file "$ZDOTDIR/user-functions.zsh"
