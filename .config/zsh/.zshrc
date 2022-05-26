@@ -4,7 +4,11 @@
 HISTSIZE=500
 SAVEHIST=100000
 HISTFILE="$HOME/.cache/zsh/history"
-setopt APPEND_HISTORY
+
+# options
+setopt appendhistory nomatch menucomplete
+setopt autocd extendedglob 		# change directory given just path
+
 
 # Basic auto/tab completion
 autoload -Uz compinit
@@ -12,6 +16,8 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 # Case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+_comp_options+=(globdots)		# Include hidden files.
+
 # Colors
 # Complete . and .. special directories
 zstyle ':completion:*' special-dirs true
@@ -19,62 +25,44 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zmodload zsh/complist
 
+# extend `help` functionality so that it works on shell builtins and other shell features
+autoload -Uz run-help
+(( ${+aliases[run-help]} )) && unalias run-help
+alias help=run-help
+
+# Useful functions
+[[ -f "$ZDOTDIR/functions.zsh" ]] && source "$ZDOTDIR/functions.zsh"
+
+# Normal files
+zsh_add_file "$ZDOTDIR/zsh-vim-mode"
+
 # FZF
-[ -f /usr/share/fzf/completion.zsh ]   && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+zsh_add_file "/usr/share/fzf/completion.zsh"
+zsh_add_file "/usr/share/fzf/key-bindings.zsh"
+
+# Shell themes and plugins
+zsh_add_file '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+zsh_add_file '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'		# Fish-like autosuggestions
+
+# search repos for programs that can't be found
+zsh_add_file '/usr/share/doc/pkgfile/command-not-found.zsh' ]]
+
+# Ranger plugins
+zsh_add_file "$XDG_CONFIG_HOME/ranger/plugins/shell_automatic_cd.sh"
 
 # conda completion
-fpath+="$ZDOTDIR/conda-zsh-completion"
+# fpath+="$ZDOTDIR/conda-zsh-completion"
+
+# aliases and some fundtions
+zsh_add_file "$ZDOTDIR/aliases.zsh"
+zsh_add_file "$ZDOTDIR/user-functions.zsh"
 
 compinit
-_comp_options+=(globdots)		# Include hidden files
 
-# get help
-autoload -Uz run-help
-# unalias run-help
-alias help='run-help'
-
-# options
-setopt autocd extendedglob 		# change directory given just path
-
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
 # Key-bindings
 bindkey -s '^o' 'ranger_cd^M'
-
-
-# extra files
-[[ -f "$ZDOTDIR/aliases.zsh"   ]] && source "$ZDOTDIR/aliases.zsh"
-[[ -f "$ZDOTDIR/functions.zsh" ]] && source "$ZDOTDIR/functions.zsh"
-
-
-# Shell themes and plugins
-[[ -f '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 	# Fish-like syntax highlighting
-[[ -f '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 		# Fish-like autosuggestions
-# search repos for programs that can't be found
-[[ -f '/usr/share/doc/pkgfile/command-not-found.zsh' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
-
-# Ranger plugins
-[[ -f "$HOME/.config/ranger/plugins/shell_automatic_cd.sh" ]] && source "$HOME/.config/ranger/plugins/shell_automatic_cd.sh"
 
 # ~/.local/bin/ANSI/$(ls ~/.local/bin/ANSI/ | shuf -n 1)
 # if not running intelliji ide or in the tty

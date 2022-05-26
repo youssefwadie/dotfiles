@@ -1,3 +1,33 @@
+function zsh_add_file () {
+		[[ -f "$1" ]] && source "$1"
+}
+
+function ranger_cd() {
+    temp_file="$(mktemp -p '/tmp' 'ranger_cd.XXXXXXXXXX')"
+    ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+    if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+        cd -- "$chosen_dir"
+    fi
+    rm -f -- "$temp_file"
+}
+
+# search repos for programs that can't be found
+function command_not_found_handler() {
+  local pkgs cmd="$1"
+
+  # pkgfile is faster than `pacman -F` in indexing the binary files
+  pkgs=(${(f)"$(pkgfile -b -v -- "$cmd" 2>/dev/null)"})
+  if [[ -n "$pkgs" ]]; then
+    printf '%s may be found in the following packages:\n' "$cmd"
+    printf '  %s\n' $pkgs[@]
+  else
+    printf 'zsh: command not found: %s\n' "$cmd"
+  fi 1>&2
+
+  return 127
+}
+
+
 #function command_not_found_handler() {
 #  local pkgs cmd="$1"
 #  pkgs=(${(f)"$(pacman -F --color always usr/bin/$cmd 2>/dev/null)"})
@@ -11,53 +41,4 @@
 #  return 127
 #}
 
-function yt480() {
-	yt-dlp "$1" -f135+140 -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar
-}
-
-
-function yt_video() {
-	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar --write-auto-sub "$2"
-}
-
-function yt_playlist() {
-	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
-}
-
-function yt_audio() {
-	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(creator)s/%(title)s.%(ext)s" "$2"
-}
-
-function continue_downloading() {
-    if [[ $# -ne 1 ]]; then
-        printf "Expected the one file for links, got %d\n" $#
-    else
-        aria2c --max-concurrent-downloads=1 --summary-interval=0 --check-certificate=false --auto-file-renaming=false --dir=$PWD --input=$1
-    fi
-}
-
-function ex()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xvjf $1   ;;
-      *.tar.gz)    tar xvzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xvf $1    ;;
-      *.tbz2)      tar xvjf $1   ;;
-      *.tgz)       tar xvzf $1   ;;
-      *.zip)       unzip $1 -d "${1%.*}"     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
