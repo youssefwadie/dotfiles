@@ -6,7 +6,7 @@ SAVEHIST=100000
 HISTFILE="$HOME/.cache/zsh/history"
 
 # options
-setopt appendhistory nomatch menucomplete
+setopt appendhistory nomatch 
 setopt autocd extendedglob 		# change directory given just path
 
 
