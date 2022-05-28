@@ -1,40 +1,36 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias change-kernel='doas grub-set-default'
 
 # switch graphic cards
 alias tointel='optimus-manager --switch integrated'
 alias tonvidia='optimus-manager --switch nvidia'
 alias tohybrid='optimus-manager --switch hybrid'
 
-#fix obvious typo's
+# fix obvious typo's
 alias cd..='cd ..'
 alias daos='doas'
 
 # get the error messages from journalctl
 alias jctl='journalctl -p 3 -xb'
 
-#maintenance
+# maintenance
 alias big='expac -H M "%m\t%n" | sort -h | nl'
 
-# Neovim for important configuration files
-alias ngrub='doas nvim /etc/default/grub'
+# Neovim
 alias v='nvim'
 
 # Micro
 alias m='micro'
 
-# grub update
-alias update-grub='doas grub-mkconfig -o /boot/grub/grub.cfg'
 
 # switch between bash and zsh
 # alias tobash="doas chsh $USER -s /bin/bash && echo 'Now log out.'"
 # alias tozsh="doas chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
-#Recent Installed Packages
+# Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
-# pacman stuff
+# pacman
 alias p='pacman'
 alias i='doas pacman -Syu'
 alias r='doas pacman -Rsn'
@@ -51,10 +47,12 @@ alias ls='ls -lh --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 alias l.="ls -A | egrep '^\.'"
+
 # file manipulation
 alias mv='mv -vi'
 alias cp='cp -vir'
 alias rm='rm -vi'
+
 # Colorize the grep command output for ease of use (good for log files)##
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -86,10 +84,5 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 # clean history
 # alias 'clear_history'="echo -n >| $HISTFILE; fc -p $HISTFILE; echo >&2 History file deleted."
 
-# JS stuff
+# JS liver server
 alias live-server='live-server --browser=/usr/bin/chromium'
-
-# Java
-alias payara-run='java -jar /home/youssef/.local/java-bin/payara-micro-5.2022.1.jar --port 8080 --deploy'
-alias antlr4-compile='javac -cp /usr/share/java/antlr-complete.jar *.java'
-alias antlr4-grun='java -cp /usr/share/java/antlr-complete.jar:./ org.antlr.v4.gui.TestRig'
