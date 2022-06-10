@@ -8,5 +8,6 @@
   "terminal.integrated.fontFamily": "'MesloLGS NF'",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.mouseSelectionStartVisualMode": true,
-  "editor.fontLigatures": false
+  "editor.fontLigatures": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
