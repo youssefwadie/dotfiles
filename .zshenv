@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # append to path
 typeset -U PATH path
-path=("$HOME/.local/bin" "$HOME/.local/node/bin" "$path[@]")
+path=("$HOME/.local/bin" "$HOME/Java/jdk/graalvm-ce-java17-22.1.0/bin" "$HOME/.local/node/bin" "$path[@]")
 export PATH
 
 # set editor to nvim
