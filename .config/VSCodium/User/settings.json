@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.colorTheme": "Dracula",
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.mouseWheelZoom": true,
   "editor.multiCursorModifier": "ctrlCmd",
