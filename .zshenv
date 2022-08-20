@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # append to path
 typeset -U path PATH
-path=($path "$HOME/.local/bin" "$HOME/Java/jdk/graalvm-ce-java17-22.1.0/bin" "$HOME/.local/node/bin")
+path=($path "$HOME/.local/bin" "$HOME/java/jdk/graalvm-ce-java17-22.2.0/bin" "$HOME/.local/node/bin")
 export PATH
 
 # set editor to nvim
@@ -14,7 +14,7 @@ export VISUAL='nvim'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Java
-export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+# export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -28,4 +28,5 @@ export MAMBA_ROOT_PREFIX="$HOME/.micromamba"
 
 # Node
 export npm_config_prefix="$HOME/.local/node"
+export CHROME_BIN="/usr/bin/chromium"
 
