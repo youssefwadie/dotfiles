@@ -30,3 +30,6 @@ export MAMBA_ROOT_PREFIX="$HOME/.micromamba"
 export npm_config_prefix="$HOME/.local/node"
 export CHROME_BIN="/usr/bin/chromium"
 
+# hagz secrets
+source "$HOME/.hagz-secrets"
+
