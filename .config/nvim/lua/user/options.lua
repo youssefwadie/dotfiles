@@ -3,7 +3,7 @@ local options = {
 	backup = false,                          -- creates a backup file
 	clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
 	cmdheight = 2,                           -- more space in the neovim command line for displaying messages
-	completeopt = { "menuone", "noselect" },             -- mostly just for cmp
+	completeopt = { "menuone", "noselect", "noinsert" },             -- mostly just for cmp
 	conceallevel = 0,                        -- so that `` is visible in markdown files
 	fileencoding = "utf-8",                  -- the encoding written to a file
 	hlsearch = true,                         -- highlight all matches on previous search pattern
@@ -38,6 +38,10 @@ local options = {
 
 vim.opt.shortmess:append "c"
 
+-- Treesitter folding 
+-- vim.wo.foldmethod = 'expr'
+-- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
@@ -45,3 +49,11 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- Vimspector options
+vim.cmd([[
+let g:vimspector_sidebar_width = 85
+let g:vimspector_bottombar_height = 15
+let g:vimspector_terminal_maxwidth = 70
+]])
+

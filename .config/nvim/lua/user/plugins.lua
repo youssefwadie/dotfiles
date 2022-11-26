@@ -56,6 +56,11 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -65,11 +70,15 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" 				-- enable LSP 
   use "williamboman/mason.nvim" 			-- language server installer
   use "williamboman/mason-lspconfig.nvim" 	-- mason-lspconfig
+  use 'simrat39/rust-tools.nvim'
   -- use "williamboman/nvim-lsp-installer" 	-- simple to use language server installer
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }	-- native telescope sorter
+  
+  -- debugger
+  use 'puremourning/vimspector'
 
 
   -- Treesitter
@@ -82,6 +91,9 @@ return packer.startup(function(use)
   -- Comments
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- status line
+  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

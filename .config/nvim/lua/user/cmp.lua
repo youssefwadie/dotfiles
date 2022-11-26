@@ -104,6 +104,7 @@ cmp.setup {
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",
         luasnip = "[Snippet]",
+		vsnip = "[VSNIP]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -111,17 +112,21 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
+    { name = "nvim_lsp", keyword_length = 3 },
+    { name = "nvim_lsp_signature_help"},
     { name = "nvim_lua" },
     { name = "luasnip" },
+    { name = 'vsnip', keyword_length = 2 },
     { name = "buffer" },
     { name = "path" },
+    { name = 'calc'},
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
   window = {
+    completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
   experimental = {

@@ -68,3 +68,18 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
+
+
+-- Vimspector
+keymap("n", "F9", "<cmd>vimspector#Launch()<cr>", opts)
+keymap("n", "F5", "<cmd>vimspector#StepOver()<cr>", opts)
+keymap("n", "F8", "<cmd>vimspector#Reset()<cr>", opts)
+keymap("n", "F11", "<cmd>vimspector#StepOver()<cr>", opts)
+keymap("n", "F12", "<cmd>vimspector#StepOut()<cr>", opts)
+keymap("n", "F10", "<cmd>vimspector#StepInto()<cr>", opts)
+
+keymap("n", "Dd", ":call vimspector#ToggleBreakpoint()<cr>", opts)
+keymap("n", "Dw", ":call vimspector#AddWatch()<cr>", opts)
+keymap("n", "De", ":call vimspector#Evaluate()<cr>", opts)
+
+

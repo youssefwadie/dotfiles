@@ -1,6 +1,6 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  ensure_installed = { "python", "java" },
+  ensure_installed = { "python", "java", "rust", "toml" },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
