@@ -39,7 +39,7 @@ alias idep='doas pacman -Syu && doas pacman -S --asdeps'
 alias q='paru -Ss'
 alias unlock="doas rm /var/lib/pacman/db.lck"
 alias cleanup='pacman -Qtdq | doas pacman -Rsn -'
-alias mirrors='doas reflector --latest 10 --protocol http,https --sort rate --download-timeout 10 --save /etc/pacman.d/mirrorlist'
+alias mirrors='doas reflector --latest 10 --protocol http,https --sort rate --download-timeout 20 --save /etc/pacman.d/mirrorlist'
 
 # list
 alias l='ls --color=auto'
@@ -59,13 +59,14 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
 # Youtube Video
-alias ytv-best='yt_video best'
+alias ytv-best='yt_video bestvideo+bestaudio'
 alias ytv-hd='yt_video 22'
 alias ytv-480='yt480'
 
 # Youtube Playlist
 alias ytp-best='yt_playlist best'
 alias ytp-hd='yt_playlist 22'
+alias ytp-hd-wi='yt_playlist_without_indices 22'
 alias ytp-best='yt_playlist bestvideo+bestaudio'
 
 # Youtube Music

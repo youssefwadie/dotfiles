@@ -5,11 +5,15 @@ function yt480() {
 
 
 function yt_video() {
-	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar --write-auto-sub "$2"
+	yt-dlp --no-playlist -f "$1" -o "~/Downloads/YouTube/%(title)s.%(ext)s" --write-sub --sub-lang en,ar --write-auto-sub "$2"
 }
 
 function yt_playlist() {
 	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
+}
+
+function yt_playlist_without_indices() {
+	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
 }
 
 function yt_audio() {

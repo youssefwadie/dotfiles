@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # append to path
 typeset -U path PATH
-path=($path "$HOME/.local/bin" "$HOME/java/jdk/graalvm-ce-java17-22.2.0/bin" "$HOME/java/keycloak-current/bin" "$HOME/.local/node/bin")
+path=($path "$HOME/.local/bin" "$HOME/java/jdk/graalvm-ce-java17/bin" "$HOME/java/keycloak-current/bin" "$HOME/.local/node/bin")
 export PATH
 
 # set editor to nvim
@@ -29,6 +29,9 @@ export MAMBA_ROOT_PREFIX="$HOME/.micromamba"
 # Node
 export npm_config_prefix="$HOME/.local/node"
 export CHROME_BIN="/usr/bin/chromium"
+
+# api keys
+source "$HOME/.api-keys"
 
 # hagz secrets
 source "$HOME/.hagz-secrets"
