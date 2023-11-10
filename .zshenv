@@ -14,6 +14,9 @@ export VISUAL='nvim'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Java
+export JAVA_HOME="/usr/lib/jvm/java-17-temurin"
+export ORACLE_HOME="$HOME/oracle/middleware/oracle_home"
+
 # export JDK_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # XDG
