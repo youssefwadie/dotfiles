@@ -60,14 +60,15 @@ alias fgrep="fgrep --color=auto"
 
 # Youtube Video
 alias ytv-best='yt_video bestvideo+bestaudio'
-alias ytv-hd='yt_video 22'
+alias ytv-hd='yt_video 136+140'
 alias ytv-480='yt480'
 
 # Youtube Playlist
 alias ytp-best='yt_playlist best'
-alias ytp-hd='yt_playlist 22'
-alias ytp-hd-wi='yt_playlist_without_indices 22'
+alias ytp-hd='yt_playlist 136+140'
+alias ytp-hd-wi='yt_playlist_without_indices 136+140'
 alias ytp-best='yt_playlist bestvideo+bestaudio'
+alias ytrp-best='yt_playlist_raw bestvideo+bestaudio'
 
 # Youtube Music
 alias yta-aac='yt_audio aac'
@@ -85,5 +86,3 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 # clean history
 # alias 'clear_history'="echo -n >| $HISTFILE; fc -p $HISTFILE; echo >&2 History file deleted."
 
-# JS liver server
-alias live-server='live-server --browser=/usr/bin/chromium'

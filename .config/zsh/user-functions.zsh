@@ -16,6 +16,10 @@ function yt_playlist_without_indices() {
 	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" --write-sub --sub-lang en,ar --write-auto-sub "$2"
 }
 
+function yt_playlist_raw() {
+	yt-dlp -f "$1" -o "~/Downloads/YouTube/%(playlist)s/%(title)s.%(ext)s" --playlist-start "$3" --playlist-end "$4" "$2"
+}
+
 function yt_audio() {
 	yt-dlp --extract-audio --audio-format "$1" -o "~/Downloads/YouTube/Music/%(creator)s/%(title)s.%(ext)s" "$2"
 }

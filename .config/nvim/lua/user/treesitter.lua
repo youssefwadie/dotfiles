@@ -1,4 +1,6 @@
 local configs = require("nvim-treesitter.configs")
+local context_commentstring = require("ts_context_commentstring")
+
 configs.setup {
   ensure_installed = { "python", "java", "rust", "toml" },
   sync_install = false,
@@ -20,12 +22,12 @@ configs.setup {
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-    config = {
-      python = '# %s'
-    },
-  },
 }
 
+context_commentstring.setup {
+    enable = true,
+    enable_autocmd = false,
+    languages = {
+      python = '# %s'
+    },
+}
